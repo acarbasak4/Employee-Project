@@ -1,16 +1,16 @@
 {
-    "employees": [
-        {
-            "name": "Başak Acar",
-            "department": "Computer Engineer",
-            "salary": 4000,
-            "id": 1
-        },
-        {
-            "name": "Ali Acar ",
-            "department": "Teacher",
-            "salary": 3500,
-            "id": 2
-        }
-    ]
+  "employees": [
+    {
+      "name": "Başak Acar",
+      "department": "Computer Engineer",
+      "salary": 4000,
+      "id": 1
+    },
+    {
+      "name": "Ali Acar ",
+      "department": "Teacher",
+      "salary": 3500,
+      "id": 2
+    }
+  ]
 }
