@@ -1,10 +1,16 @@
 {
-    "posts": [
-        { "id":1,
-        "title": "json-server", "author":"typicode"}
-    ],
-    "comments": [
-        {"id":1, "body": "some comment", "postId":1}
-    ],
-    "profile": {"name": "typicode"}
+    "employees": [
+        {
+            "name": "Başak Acar",
+            "department": "Computer Engineer",
+            "salary": 4000,
+            "id": 1
+        },
+        {
+            "name": "Ali Acar ",
+            "department": "Teacher",
+            "salary": 3500,
+            "id": 2
+        }
+    ]
 }
