@@ -1,4 +1,5 @@
 import {Request} from "./requests";
+import {UI} from "./ui";
 
 const form = document.getElementById("employee-form");
 const nameInput = document.getElementById("name");
@@ -9,19 +10,33 @@ const updateEmployeeButton = document.getElementById("update");
 
 const request = new Request("http://localhost:3000/employees");
 
-// request.get()
-// .then(employees => console.log(employees))
-// .catch(err=> console.log(err));
+const ui = new UI();
+eventListeners();
 
+function eventListeners(){
+    document.addEventListener("DOMContentLoader",getAllEmployees);
+    form.addEventListener("submit",addEmployee);
 
-// request.post({name:"Oğuzhan Arslan", department:"Game Developer", salary:4500 })
-// .then(employee => console.log(employee))
-// .catch(err => console.log(err));
+} 
 
-// request.put(3,{name:"Oğuzhan Arslan", department: "FrontEnd Developer", salary: 5000 } )
-// .then(employee=> console.log(employee))
-// .catch(err=> console.log(err));
+function getAllEmployees(){
+    request.get()
+    .then(employees => {
+        ui.addAllEmployeeToUI(employees);
+    })
+    .catch(err => console.log(err));
+}
 
-request.delete(3)
-.then(message=>console.log(message) )
-.catch(err=> console.log(err));
+function addEmployee(e){
+
+    const employeeName = nameInput.value.trim();
+    const employeeDepartment = departmentInput.value.trim();
+    const employeeSalary = salaryInput.value.trim();
+
+    if(employeeName === "" || employeeDepartment === "" || employeeSalary === ""){
+        alert("Please fill all blanks.");
+    }
+
+ui.clearInputs();
+e.preventDefault();
+}
